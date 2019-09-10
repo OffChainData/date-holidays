@@ -1,0 +1,7 @@
+version: '3'
+services:
+  holiday-sources:
+    container_name: date-holidays
+    ports:
+      - "8184:3000"
+    build: .
