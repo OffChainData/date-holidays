@@ -17,9 +17,10 @@ const requestHandler = (request, response) => {
         }
         
         while (year <= queryData.end) {
+            //The key of the array should be the subdivision ISO code
             for (let state in states) {
                 let location = country
-                if (state) {
+                if (states[state]) {
                     hd.init(country, state)
                     location = country + '-' + state
                 } else {
