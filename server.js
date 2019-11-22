@@ -1,4 +1,6 @@
-// content of index.js
+/*
+    Dump all holidays for all countries and supported states for the years requested
+*/
 const http = require('http')
 const url = require('url');
 const port = 3000
@@ -13,14 +15,19 @@ const requestHandler = (request, response) => {
         let year = queryData.start;
         let states = hd.getStates(country)
         if (!states) {
-            states = [null];
+            //No states are defined for the country, so return only country level dates
+            states = {'country': true};
+        } else if (country != 'GB') {
+            //Some states are defined for the country. However we can't be certain that all states have
+            //been returned, so we must also return country level dates.
+            states['country'] = true;
         }
-        
+
         while (year <= queryData.end) {
             //The key of the array should be the subdivision ISO code
             for (let state in states) {
                 let location = country
-                if (states[state]) {
+                if (states[state] && state != 'country') {
                     hd.init(country, state)
                     location = country + '-' + state
                 } else {
