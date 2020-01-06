@@ -1,6 +1,6 @@
 {
   "name": "date-holidays",
-  "version": "1.4.2",
+  "version": "1.4.12",
   "description": "worldwide holidays",
   "keywords": [
     "holidays",
@@ -23,9 +23,13 @@
     "Christian Schinnerl <Schinnerl.Christian@gmail.com>",
     "David Álvarez Navarro <david16an@gmail.com>",
     "Erlend Ellingsen <erlend.ame@gmail.com>",
+    "Filip Staffa <fstaffa@cimpress.com>",
     "Francesco Ansanelli <f.ansanelli@solution-g.com>",
+    "Germain <germain.clauss@receeve.com>",
+    "germain-receeve <53000086+germain-receeve@users.noreply.github.com>",
     "Goran Martinjak <goran@netgen.hr>",
     "Guillaume Bisch <guillaume@sqrd.com>",
+    "JAlexander <roodrallec@users.noreply.github.com>",
     "James Dixon <jim.w.dixon@gmail.com>",
     "Jeff Hughes <43132199+jwh-hutchison@users.noreply.github.com>",
     "John-Olav Storvold <johsto@knowit.no>",
@@ -36,8 +40,12 @@
     "Matthias Lösch <mlo@codiac.de>",
     "Nils Mehlhorn <nilsmehlhorn@users.noreply.github.com>",
     "Oscar Lagercrantz <oscar.lagercrantz@gmail.com>",
+    "Petar Kovačević <pero.5ar@gmail.com>",
+    "Philip Renich <hello@philiprenich.com>",
+    "rbrasco <roger.brasco@scytl.com>",
     "Roman Hirsch <r.hirsch@brendow.de>",
     "Ryan Gerry <gerryster@gmail.com>",
+    "Sean Riley <spriley@msts.com>",
     "Quennie <simply.me.queeny@gmail.com>",
     "Tiago <tiago.peliciari@gmail.com>",
     "Wayne Parrott <wayne.parrott@reblcorp.com>",
@@ -70,6 +78,43 @@
     "watch": "watch-run -p data/countries/*.yaml npm run yaml",
     "webpack": "webpack",
     "yaml": "node scripts/holidays2json.js"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "break",
+          "feat",
+          "fix",
+          "chore",
+          "docs",
+          "refactor",
+          "revert",
+          "test"
+        ]
+      ],
+      "subject-case": [
+        2,
+        "never",
+        [
+          "start-case",
+          "pascal-case"
+        ]
+      ],
+      "scope-case": [
+        0
+      ]
+    }
   },
   "babel": {
     "ignore": [
@@ -107,46 +152,49 @@
     ]
   },
   "dependencies": {
-    "date-holidays-parser": "^1.4.0",
+    "date-holidays-parser": "^1.4.2",
     "js-yaml": "^3.13.1",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
     "prepin": "^1.0.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-decorators": "^7.4.4",
-    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
-    "@babel/plugin-proposal-function-sent": "^7.5.0",
-    "@babel/plugin-proposal-json-strings": "^7.2.0",
-    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
-    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-syntax-import-meta": "^7.2.0",
-    "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-proposal-export-namespace-from": "^7.7.4",
+    "@babel/plugin-proposal-function-sent": "^7.7.4",
+    "@babel/plugin-proposal-json-strings": "^7.7.4",
+    "@babel/plugin-proposal-numeric-separator": "^7.7.4",
+    "@babel/plugin-proposal-throw-expressions": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-syntax-import-meta": "^7.7.4",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/register": "^7.7.4",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "babel-loader": "^8.0.6",
-    "dtslint": "^0.9.0",
-    "eslint": "^6.1.0",
-    "eslint-config-standard": "^13.0.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^9.1.0",
+    "dtslint": "^2.0.2",
+    "eslint": "^6.7.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.1",
     "hashtree": "^0.7.0",
+    "husky": "^3.1.0",
     "markedpp": "^1.0.1",
-    "mocha": "^6.2.0",
+    "mocha": "^6.2.2",
     "npm-run-all": "^4.1.5",
     "parallel-webpack": "^2.4.0",
-    "rimraf": "^2.6.3",
-    "typescript": "^3.5.3",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.3",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.39.1",
-    "webpack-bundle-analyzer": "^3.4.1",
-    "webpack-cli": "^3.3.6"
+    "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10"
   },
   "engines": {
     "node": ">=4.0.0"

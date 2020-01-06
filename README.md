@@ -247,7 +247,8 @@ Countries: 144
 ├── ES: España
 │   ├── MD: Comunidad de Madrid
 │   ├── AN: Andalucía
-│   └── AR: Aragón
+│   ├── AR: Aragón
+│   └── CT: Catalonia
 ├── ET: ኢትዮጵያ
 ├── FI: Suomi
 ├── FO: Føroyar
@@ -265,7 +266,7 @@ Countries: 144
 │   ├── ALD: Alderney
 │   ├── ENG: England
 │   ├── NIR: Northern Ireland
-│   ├── SCT: Scottland
+│   ├── SCT: Scotland
 │   └── WLS: Wales
 ├── GD: Grenada
 ├── GF: Guyane
